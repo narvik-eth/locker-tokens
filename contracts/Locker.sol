@@ -35,14 +35,6 @@ contract Locker is Ownable {
     // { "owner": { "token": amount } }
     mapping(address => EnumerableMap.AddressToUintMap) private _ftBalances;
     // { "owner": { "token": [id] } }
-    /*
-    {
-        "OwnerAddress": {
-            "TokenAddress": [1, 2, 3]
-        }
-    }
-    address => ()
-    */
     mapping(address => mapping(address => EnumerableSet.UintSet)) private _nftBalances;
 
     function addLockableERC20(address _addr) external onlyOwner {
